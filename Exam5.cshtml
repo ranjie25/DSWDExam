@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Exam5";
+}
+
+<script src="~/Scripts/TestScripts/Exam.js"></script>
+
+<div>
+    <div ng-app="CMain" ng-cloak ng-controller="ExamCtrl">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>First Name:</label>
+                    <input type="text" ng-model="FName" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Last Name:</label>
+                    <input type="text" ng-model="LName" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Age:</label>
+                    <input type="text" ng-model="Age" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Date:</label>
+                    <div class="form-group align-input">
+                        <div class="inline-label">
+
+                            <div class="input-group" style="display:inline-flex">
+                                <input name="BirthDate"
+                                       id="BirthDate"
+                                       type="text"
+                                       class="txt-style" style="font-size:12px !important"
+                                       uib-datepicker-popup="MM-dd-yyyy"
+                                       ng-model="BirthDate"
+                                       is-open="BirthdateUpdate.opened"
+                                       datepicker-options="dateOptions"
+                                       show-button-bar="false" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default"
+                                            ng-click="openDatePicker()">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Gender:</label>
+                    <select ng-options="items.SexId as items.name for items in Gender"
+                            ng-model="GenderId">
+                        <option value="">[Select Gender]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Region:</label>
+                    <select ng-options="items.Id as items.Name for items in Region"
+                            ng-model="RegionId2">
+                        <option value="">[Select Region]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <button class="btn btn-primary" ng-click="Save()">Save</button>
+                    <button class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Birth Date</th>
+                        <th>Sex Name</th>
+                        <th>Region Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+       
+    </div>
+</div>
