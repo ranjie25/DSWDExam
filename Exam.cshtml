@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "DSWD EXAM ITEM 4";
+}
+
+
+<script src="~/Scripts/TestScripts/Exam.js"></script>
+
+<div>
+    <div ng-app="CMain" ng-cloak ng-controller="ExamCtrl">
+
+        <div>
+            <label>Region List</label>
+            <select ng-options="items.Id as items.Name for items in Region"
+                    ng-model="RegionId">
+                <option value="">[Select Region]</option>
+            </select>
+        </div>
+
+    </div>
+</div>
